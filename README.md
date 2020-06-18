@@ -1,5 +1,18 @@
 # atm
 
+## About proj
+
+### Pages
+LockScreen - first page
+CashWithdrawal - page for cash withdrawal with validation
+ResultWithdrawal - result pages
+
+### Modules
+Vuex - describe avalible stores
+    - cash - all manipulation of atm
+    - auth - simple auth by charing flag in route
+Route - describing pathes of app and check auth
+
 ## Project setup
 ```
 npm install
@@ -27,3 +40,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+

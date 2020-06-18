@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
@@ -17,16 +13,28 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.card {
+  padding: 10px;
+  align-items: center;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.reserved {
+  height: 20px;
+}
+
+.error {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 15px;
+  font-size: 12px;
+  color: red;
 }
 </style>
