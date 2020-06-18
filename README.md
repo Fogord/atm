@@ -9,8 +9,8 @@
 
 ### Modules:
     Vuex - describe avalible stores
-        - cash - all manipulation of atm
-        - auth - simple auth by charing flag in route
+     cash - all manipulation of atm
+     auth - simple auth by checking flag in route
     Route - describing pathes of app and check auth
 
 ## Project setup
