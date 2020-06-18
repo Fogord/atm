@@ -2,16 +2,16 @@
 
 ## About proj
 
-### Pages
-LockScreen - first page
-CashWithdrawal - page for cash withdrawal with validation
-ResultWithdrawal - result pages
+### Pages:
+    LockScreen - first page
+    CashWithdrawal - page for cash withdrawal with validation
+    ResultWithdrawal - result pages
 
-### Modules
-Vuex - describe avalible stores
-    - cash - all manipulation of atm
-    - auth - simple auth by charing flag in route
-Route - describing pathes of app and check auth
+### Modules:
+    Vuex - describe avalible stores
+        - cash - all manipulation of atm
+        - auth - simple auth by charing flag in route
+    Route - describing pathes of app and check auth
 
 ## Project setup
 ```
