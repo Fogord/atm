@@ -5,7 +5,7 @@
 
       <selectedBanknotes
         :items="banknotes"
-        :selected="selectedBanknot"
+        :selected="selectedBanknote"
         :action="select"
       />
 
@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      selectedBanknot: null,
+      selectedBanknote: null,
       withdrawalAmount: null,
       error: null
     };
@@ -47,30 +47,30 @@ export default {
   computed: {
     selectedCurencyText() {
       // eslint-disable-next-line no-extra-boolean-cast
-      return this.selectedBanknot !== null
-        ? `Selected: ${this.banknotes[this.selectedBanknot].name}`
+      return this.selectedBanknote !== null
+        ? `Selected: ${this.banknotes[this.selectedBanknote].name}`
         : "Select currency";
     },
     availableAmount() {
-      return this.selectedBanknot !== null
-        ? `Avaliable amount: ${this.banknotes[this.selectedBanknot].count *
-            this.banknotes[this.selectedBanknot].rating +
+      return this.selectedBanknote !== null
+        ? `Avaliable amount: ${this.banknotes[this.selectedBanknote].count *
+            this.banknotes[this.selectedBanknote].rating +
             " " +
-            this.curentcy} 
+            this.currency} 
        `
         : "";
     },
-    ...mapState("cash", ["banknotes", "curentcy"])
+    ...mapState("cash", ["banknotes", "currency"])
   },
   methods: {
-    select(selectedBanknot) {
-      this.selectedBanknot = selectedBanknot;
+    select(selectedBanknote) {
+      this.selectedBanknote = selectedBanknote;
     },
     submit(withdrawalAmount) {
       this.$store
         .dispatch("cash/withdrawal", {
           amount: withdrawalAmount,
-          curency: this.selectedBanknot
+          curency: this.selectedBanknote
         })
         .then(() => this.$router.push({ path: "/resultWithdrawal" }))
         .catch(error => (this.error = error));

@@ -1,5 +1,5 @@
 const state = () => ({
-  curentcy: "grn",
+  currency: "grn",
   lastOperation: null,
   banknotes: [
     {
@@ -40,17 +40,18 @@ const state = () => ({
 const mutations = {
   WITHDRAWAL(state, withdrawalObj) {
     state.banknotes[withdrawalObj.curency].count =
-      state.banknotes[withdrawalObj.curency].count - withdrawalObj.banknotCount;
+      state.banknotes[withdrawalObj.curency].count -
+      withdrawalObj.banknoteCount;
 
     state.withdrawalCurency = withdrawalObj.curency;
-    state.withdrawalCount = withdrawalObj.banknotCount;
+    state.withdrawalCount = withdrawalObj.banknoteCount;
 
     const amount =
       state.banknotes[withdrawalObj.curency].rating *
-      withdrawalObj.banknotCount;
+      withdrawalObj.banknoteCount;
     const name = state.banknotes[withdrawalObj.curency].name;
 
-    state.lastOperation = `You withdrawaled ${amount} ${state.curentcy} by ${name} banknotes`;
+    state.lastOperation = `You withdrawaled ${amount} ${state.currency} by ${name} banknotes`;
   },
   ERROR(state, error) {
     state.error = error;
@@ -79,7 +80,7 @@ const actions = {
           avalibleAmoutCurency === 0
         ) {
           commit("WITHDRAWAL", {
-            banknotCount:
+            banknoteCount:
               +withdrawalObj.amount /
               state.banknotes[withdrawalObj.curency].rating,
             curency: withdrawalObj.curency
